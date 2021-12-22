@@ -65,7 +65,7 @@ async def play(client, m: Message):
          elif replied.voice:
             songname = "Voice Note"
          if chat_id in QUEUE:
-            pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
+            pos = add_to_queue(chat_id, songname, url, duration, thumbnail, "Audio", 0)
             await huehue.edit(f"En cola en el n. **#{pos}**")
          else:
           try:
@@ -76,7 +76,7 @@ async def play(client, m: Message):
                ),
                stream_type=StreamType().pulse_stream,
             )
-            add_to_queue(chat_id, songname, dl, link, "Audio", 0)
+            add_to_queue(chat_id, songname, dl, url, duration, thumbnail, "Audio", 0)
             await huehue.edit(f"**Reproduciendo Música ▶** \n**🎧 MUSICA** : [{songname}]({link}) \n**💬 CHAT** : `{chat_id}`", disable_web_page_preview=True)
           except Exception as hmme:
             await huehue.edit(hmme)
@@ -97,7 +97,7 @@ async def play(client, m: Message):
                   await huehue.edit(f"**YTDL ERROR ⚠️** \n\n`{ytlink}`")
                else:
                   if chat_id in QUEUE:
-                     pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
+                     pos = add_to_queue(chat_id, songname, ytlink, url, duration, thumbnail, "Audio", 0)
                      await huehue.edit(f"En cola en el n. **#{pos}**")
                   else:
                      try:
@@ -108,7 +108,7 @@ async def play(client, m: Message):
                            ),
                            stream_type=StreamType().pulse_stream,
                         )
-                        add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
+                        add_to_queue(chat_id, songname, ytlink, url, duration, thumbnail, "Audio", 0)
                         await huehue.edit(f"**Reproduciendo Música ▶** \n**🎧 MÚSICA** : [{songname}]({url}) \n**💬 CHAT** : `{chat_id}`", disable_web_page_preview=True)
                      except Exception as ep:
                         await huehue.edit(f"`{ep}`")
@@ -130,7 +130,7 @@ async def play(client, m: Message):
                   await huehue.edit(f"**YTDL ERROR ⚠️** \n\n`{ytlink}`")
                else:
                   if chat_id in QUEUE:
-                     pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
+                     pos = add_to_queue(chat_id, songname, ytlink, url, duration, thumbnail, "Audio", 0)
                      await huehue.edit(f"En cola en el n. **#{pos}**")
                   else:
                      try:
@@ -141,7 +141,7 @@ async def play(client, m: Message):
                            ),
                            stream_type=StreamType().pulse_stream,
                         )
-                        add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
+                        add_to_queue(chat_id, songname, ytlink, url, duration, thumbnail, "Audio", 0)
                         await huehue.edit(f"**Reproduciendo Música ▶** \n**🎧 MÚSICA** : [{songname}]({url}) \n**💬 CHAT** : `{chat_id}`", disable_web_page_preview=True)
                      except Exception as ep:
                         await huehue.edit(f"`{ep}`")
