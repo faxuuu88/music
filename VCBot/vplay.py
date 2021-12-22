@@ -95,12 +95,12 @@ async def vplay(client, m: Message):
                stream_type=StreamType().pulse_stream,
             )
             add_to_queue(chat_id, songname, dl, link, "Video", Q)
-            await huehue.edit(f"**Started Playing Video ▶** \n**🎧 SONG** : [{songname}]({link}) \n**💬 CHAT** : `{chat_id}`", disable_web_page_preview=True)
+            await huehue.edit(f"**Reproduciendo Música ▶** \n**🎧 MÚSICA** : [{songname}]({link}) \n**💬 CHAT** : `{chat_id}`", disable_web_page_preview=True)
       else:
          if len(m.command) < 2:
             await m.reply("`Reply to an Audio File or give something to Search`")
          else:
-            huehue = await m.reply("`Searching...`")
+            huehue = await m.reply("`Buscando...`")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
@@ -129,7 +129,7 @@ async def vplay(client, m: Message):
                            stream_type=StreamType().pulse_stream,
                         )
                         add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
-                        await huehue.edit(f"**Started Playing Video ▶** \n**🎧 SONG** : [{songname}]({url}) \n**💬 CHAT** : `{chat_id}`", disable_web_page_preview=True)
+                        await huehue.edit(f"**Reproduciendo Música ▶** \n**🎧 MUSICA** : [{songname}]({url}) \n**💬 CHAT** : `{chat_id}`", disable_web_page_preview=True)
                      except Exception as ep:
                         await huehue.edit(f"`{ep}`")
             
@@ -137,7 +137,7 @@ async def vplay(client, m: Message):
          if len(m.command) < 2:
             await m.reply("`Reply to an Audio File or give something to Search`")
          else:
-            huehue = await m.reply("`Searching...`")
+            huehue = await m.reply("`Buscando...`")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
@@ -166,7 +166,7 @@ async def vplay(client, m: Message):
                            stream_type=StreamType().pulse_stream,
                         )
                         add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
-                        await huehue.edit(f"**Started Playing Video ▶** \n**🎧 SONG** : [{songname}]({url}) \n**💬 CHAT** : `{chat_id}`", disable_web_page_preview=True)
+                        await huehue.edit(f"**Reproduciendo Música ▶** \n**🎧 MUSICA** : [{songname}]({url}) \n**💬 CHAT** : `{chat_id}`", disable_web_page_preview=True)
                      except Exception as ep:
                         await huehue.edit(f"`{ep}`")
 
